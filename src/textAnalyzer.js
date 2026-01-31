@@ -7,7 +7,14 @@ function readFile(filePath){
 
 function totalWords(textStr){
     textStr = textStr.replaceAll("\n", " ");
-    return textStr.split(" ").length;
+    const words = textStr.split(" ");
+    let resultArray =[];
+    for(const word of words){
+        if(word != ""){
+            resultArray.push(word);
+        }
+    }
+    return resultArray.length;
 }
 
 function findLongestWord(textStr){
@@ -31,6 +38,9 @@ function findLongestWord(textStr){
 
 function totalLines(textStr){
     const words = textStr.split("\n");
+    if(words.length == 1 && words[0] == ""){
+        return 0;
+    }
     return words.length;
 }
 

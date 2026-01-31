@@ -6,6 +6,9 @@ function readFile(filePath){
 }
 
 function calculateSum(listOfNums){
+    if(listOfNums.length === 0){
+        return 0;
+    }
     let sum = 0;
     for(const num of listOfNums){
         sum += num;
@@ -14,12 +17,18 @@ function calculateSum(listOfNums){
 }
 
 function minAndMax(listOfNums){
+    if(listOfNums.length === 0){
+        return [0,0];
+    }
     const min = Math.min(...listOfNums);
     const max = Math.max(...listOfNums);
     return [min, max];
 }
 
 function calculateAverage(listOfNums){
+    if(listOfNums.length === 0){
+        return 0;
+    }
     const sum = calculateSum(listOfNums);
     return sum / listOfNums.length; 
 }
